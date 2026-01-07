@@ -1,0 +1,621 @@
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+
+/*
+	Modern Portfolio Design
+	Based on provided screenshots for Cecilia's Portfolio
+*/
+
+/* ========================================================================
+   RESET & BASE STYLES
+   ======================================================================== */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 16px;
+}
+
+body {
+	background: #f8f9fa;
+	font-family: 'Inter', 'Segoe UI', sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.6;
+	color: #333;
+	overflow-x: hidden;
+}
+
+/* ========================================================================
+   TYPOGRAPHY
+   ======================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+	color: #333;
+	line-height: 1.3;
+}
+
+strong {
+	font-weight: 600;
+	color: #2563eb;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+/* ========================================================================
+   LAYOUT
+   ======================================================================== */
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+#main {
+	margin: 0;
+	padding: 0;
+}
+
+/* ========================================================================
+   HERO SECTION
+   ======================================================================== */
+
+.hero {
+	background: linear-gradient(135deg, #e8f2ff 0%, #f0f8ff 100%);
+	padding: 4rem 0 6rem;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.hero-content {
+	display: flex;
+	align-items: center;
+	gap: 4rem;
+	min-height: 80vh;
+}
+
+.hero-text {
+	flex: 1;
+	max-width: 600px;
+}
+
+.hero-greeting {
+	font-size: 4rem;
+	font-weight: 800;
+	color: #2563eb;
+	margin-bottom: 2rem;
+	letter-spacing: -0.02em;
+}
+
+.hero-name-card {
+	background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+	padding: 1rem 2rem;
+	border-radius: 50px;
+	margin-bottom: 2rem;
+	display: inline-block;
+}
+
+.hero-name-card h2 {
+	color: #1e40af;
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin: 0;
+}
+
+.hero-description {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: #64748b;
+	margin-bottom: 3rem;
+}
+
+
+.hero-image {
+	flex: 0 0 400px;
+	text-align: center;
+}
+
+.hero-image img {
+	width: 400px;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 24px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================================================
+   SKILLS SECTION
+   ======================================================================== */
+
+.skills {
+	background: #fff;
+	padding: 6rem 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.skills-visualization {
+	position: relative;
+	height: 600px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.skills-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+}
+
+.skills-center h2 {
+	font-size: 8rem;
+	font-weight: 800;
+	color: #2563eb;
+	text-align: center;
+	line-height: 0.9;
+	text-shadow: 2px 2px 0px rgba(37, 99, 235, 0.1);
+}
+
+.skill-tag {
+	position: absolute;
+	background: #fff;
+	padding: 0.8rem 1.5rem;
+	border-radius: 50px;
+	border: 2px solid #333;
+	font-weight: 600;
+	color: #333;
+	font-size: 1rem;
+	white-space: nowrap;
+	transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Positioning skill tags around the center */
+.skill-1 { top: 10%; left: 15%; }
+.skill-2 { top: 15%; right: 20%; }
+.skill-3 { top: 25%; right: 10%; }
+.skill-4 { bottom: 25%; left: 10%; }
+.skill-5 { bottom: 25%; right: 15%; }
+.skill-6 { bottom: 35%; left: 2%; }
+.skill-7 { bottom: 10%; left: 25%; }
+.skill-8 { bottom: 15%; right: 25%; }
+
+/* Decorative elements */
+.skills-decorations {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.decoration-1 {
+	position: absolute;
+	bottom: 10%;
+	left: 5%;
+	width: 120px;
+	height: 120px;
+	background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%2393c5fd' viewBox='0 0 100 100'><circle cx='50' cy='50' r='30'/><rect x='30' y='30' width='40' height='40' fill='none' stroke='%232563eb' stroke-width='2'/></svg>");
+	opacity: 0.6;
+}
+
+.decoration-2 {
+	position: absolute;
+	top: 15%;
+	right: 5%;
+	width: 80px;
+	height: 80px;
+	background: linear-gradient(45deg, #93c5fd, #60a5fa);
+	border-radius: 50%;
+	opacity: 0.7;
+}
+
+/* ========================================================================
+   PROJECTS SECTION
+   ======================================================================== */
+
+.projects {
+	background: #f8f9fa;
+	padding: 6rem 0;
+}
+
+.projects-header {
+	text-align: center;
+	margin-bottom: 4rem;
+	position: relative;
+}
+
+
+.projects-header h2 {
+	font-size: 4rem;
+	font-weight: 800;
+	color: #2563eb;
+	margin-bottom: 1rem;
+	letter-spacing: -0.02em;
+}
+
+.projects-grid {
+	display: grid;
+	/* grid-column: 1; */
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	gap: 3rem;
+	margin-top: 4rem;
+}
+
+.project-card {
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+width: 100%;
+height: 100%;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+	height: 350px;
+	width: 100%;
+	border-radius: 8px;
+}
+
+.project-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: fit;
+	border-radius: 8px;
+	transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+	transform: scale(1.05);
+}
+
+.project-info {
+	padding: 2rem;
+	background-color: white;
+	width: 100%;
+}
+
+.project-info h3 {
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: #1e293b;
+	margin-bottom: 1rem;
+}
+
+.project-info p {
+	color: #64748b;
+	line-height: 1.6;
+	margin-bottom: 2rem;
+}
+
+.project-buttons {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.btn {
+	padding: 0.8rem 1.5rem;
+	border-radius: 25px;
+	font-weight: 500;
+	font-size: 0.9rem;
+	transition: all 0.3s ease;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.btn-primary {
+	background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+	color: #fff;
+}
+
+.btn-primary:hover {
+	background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+	background: #fff;
+	color: #2563eb;
+	border: 2px solid #2563eb;
+}
+
+.btn-secondary:hover {
+	background: #2563eb;
+	color: #fff;
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+/* ========================================================================
+   THANK YOU SECTION
+   ======================================================================== */
+
+.thankyou {
+
+	background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
+	padding: 6rem 0;
+	text-align: center;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.thankyou-content{
+	position: relative;
+	rotate: -4deg;
+}
+
+.thankyou-content h2 {
+	font-size: 12rem;
+	font-weight: 800;
+	color: #fff;
+	margin-bottom: 2rem;
+	letter-spacing: -0.02em;
+}
+
+
+
+/* ========================================================================
+   CONTACT SECTION
+   ======================================================================== */
+
+.contact {
+	background: #fff;
+	padding: 4rem 0;
+	color: #1d4ed8;
+	position: absolute;
+	bottom: 0;
+	width: 85%;
+	height: fit-content;
+	margin: auto;
+	border-top-right-radius: 30px;
+	border-top-left-radius: 30px;
+}
+
+.contact-me{
+	position: absolute;
+	background-color: #fff;
+	font-weight: 600;
+	color: #1d4ed8;
+	padding: 1rem 2rem 1rem 2rem;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+	top: -3.6rem;
+	left: 2rem;
+}
+
+.contact-header {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.contact-header h3 {
+	background: #1e3a8a;
+	color: #fff;
+	padding: 1rem 2rem;
+	border-radius: 50px;
+	display: inline-block;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.contact-grid {
+	display: flex;
+	align-items: center;
+	font-size: 22px;
+	justify-content: space-evenly;
+	gap: 2rem;
+}
+
+.label{
+	margin-left: 1rem;
+}
+
+
+/* FontAwesome Icon Styles */
+.icon {
+	text-decoration: none;
+}
+
+.icon:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+	text-transform: none !important;
+	font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free';
+	font-weight: 900;
+}
+
+.icon.brands:before {
+	font-family: 'Font Awesome 6 Brands', 'Font Awesome 5 Brands';
+}
+
+.icon.solid:before {
+	font-weight: 900;
+}
+
+.contact-icon {
+	font-size: 1.5rem;
+	flex-shrink: 0;
+}
+
+/* ========================================================================
+   ANIMATIONS
+   ======================================================================== */
+
+@keyframes float {
+	0%, 100% { transform: translateY(0px); }
+	50% { transform: translateY(-20px); }
+}
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+	40% { transform: translateY(-10px); }
+	60% { transform: translateY(-5px); }
+}
+
+@keyframes wave {
+	0%, 100% { transform: rotate(0deg); }
+	25% { transform: rotate(10deg); }
+	75% { transform: rotate(-10deg); }
+}
+
+/* ========================================================================
+   RESPONSIVE DESIGN
+   ======================================================================== */
+
+@media (max-width: 1024px) {
+	.hero-content {
+		flex-direction: column;
+		text-align: center;
+		gap: 3rem;
+	}
+	
+	.hero-image {
+		flex: none;
+	}
+	
+	.hero-image img {
+		width: 300px;
+		height: 300px;
+	}
+	
+	.projects-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 0 1rem;
+	}
+	
+	.hero-greeting {
+		font-size: 3rem;
+	}
+	
+	.skills-center h2 {
+		font-size: 4rem;
+	}
+	
+	.projects-header h2 {
+		font-size: 3rem;
+	}
+	
+	.thankyou-content h2 {
+		font-size: 3.5rem;
+	}
+	
+	.hero-image img {
+		width: 250px;
+		height: 250px;
+	}
+	
+	.contact-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 480px) {
+	.hero {
+		padding: 2rem 0 4rem;
+	}
+	
+	.hero-greeting {
+		font-size: 2.5rem;
+	}
+	
+	.hero-name-card h2 {
+		font-size: 1.2rem;
+	}
+
+	.hero-description {
+		max-width: 85%;
+		margin: auto;
+	}
+	
+	
+	.skills-visualization {
+		height: 420px;
+	}
+	
+	.skills-center h2 {
+		font-size: 3rem;
+	}
+	
+	.projects-grid {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+	
+	.project-buttons {
+		flex-direction: column;
+	}
+
+	.contact-grid{
+		display: flex;
+		flex-direction: row;
+		padding: 0 1rem 0 1rem;
+		gap: 1rem;
+	}
+	.contact-grid p {
+		font-size: 1rem;
+	}
+	.label {
+		margin-left: 4px;
+	}
+	.thankyou{
+		min-height: 500px;
+	}
+	.contact{
+		padding: auto;
+		max-height: 120px;
+	}
+
+	.btn-primary{
+		font-size: 12px;
+	}
+
+	/* Positioning skill tags around the center */
+.skill-1 { top: 5%; left: 0%; }
+.skill-2 { top: 15%; right: 30%; }
+.skill-3 { top: 25%; right: 10%; }
+.skill-4 { bottom: 25%; left: 10%; }
+.skill-5 { bottom: 25%; right: 15%; }
+.skill-6 { bottom: 35%; left: 2%; }
+.skill-7 { bottom: 5%; left: 29%; }
+.skill-8 { bottom: 15%; right: 29%; }
+}
